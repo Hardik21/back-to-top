@@ -1,0 +1,23 @@
+{
+  "name": "js-back-to-top",
+  "version": "1.0.3",
+  "description": "Back to top plugin for website using javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hardik21/back-to-top.git"
+  },
+  "keywords": [
+    "back-to-top",
+    "javascript"
+  ],
+  "author": "Hardik Mandanka, Mayur Vaghasiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hardik21/back-to-top/issues"
+  },
+  "homepage": "https://github.com/Hardik21/back-to-top#readme"
+}

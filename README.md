@@ -14,13 +14,16 @@ npm i js-back-to-top
 import backToTop from 'js-back-to-top';
 
 # pass arguments
-backToTop.init();
+let option = {
+   text:'Back to top',
+   background:'white'
+}
+backToTop.init(option);
 ```
 
 ## Contributing
 [Hardik Mandanka](https://github.com/Hardik21)
-[Mayur Vaghasiya](https://github.com/Vmc4152)
+[Mayur Vaghasiya](https://github.com/vaghasiya-mayur)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-

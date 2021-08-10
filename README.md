@@ -23,3 +23,4 @@ backToTop.init();
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+

@@ -1,6 +1,6 @@
 {
-  "name": "js-back-to-top",
-  "version": "1.0.3",
+  "name": "reactjs-back-to-top",
+  "version": "1.0.4",
   "description": "Back to top plugin for website using javascript",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "back-to-top",
-    "javascript"
+    "scroll-to-top",
+    "reactjs"
   ],
   "author": "Hardik Mandanka, Mayur Vaghasiya",
   "license": "ISC",

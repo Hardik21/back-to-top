@@ -1,17 +1,17 @@
-# Javascript back-to-top
+# Javascript reactjs-back-to-top
 
-Javascript back-to-top is a simple function for the website.
+Javascript reactjs-back-to-top is a simple function for the website.
 
 ## Installation
 
 ```bash
-npm i js-back-to-top
+npm i reactjs-back-to-top
 ```
 
 ## Usage
 
 ```python
-import backToTop from 'js-back-to-top';
+import backToTop from 'reactjs-back-to-top';
 
 # pass arguments
 let option = {

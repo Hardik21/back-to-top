@@ -68,12 +68,11 @@ style.innerHTML = `
   `;
 
 exports.init = function (option) {
-  console.log(option, 'option');
   var elem = document.createElement('div');
   HTML = HTML.replace(/{WSR_TTL_TXT}/gi, option.text ? option.text : '');
   HTML = HTML.replace(/{WSR_BG_CLR}/gi, option.background ? option.background : '');
   HTML = HTML.replace(/{WSR_FNT_CLR}/gi, option.fontColor ? option.fontColor : '');
-  HTML = HTML.replace(/{WSR_IMG_URL}/gi, option.image ? option.image : "src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Top_Arrow.svg/1200px-Top_Arrow.svg.png'");
+  HTML = HTML.replace(/{WSR_IMG_URL}/gi, option.image ? 'src=' + option.image : "src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Top_Arrow.svg/1200px-Top_Arrow.svg.png'");
   HTML = HTML.replace(/{WSR_CUST_CLS}/gi, option.className ? option.className : '');
 
   elem.innerHTML = HTML;
@@ -82,7 +81,7 @@ exports.init = function (option) {
   document.head.appendChild(style);
 
   window.addEventListener("scroll", function () {
-    let scroll = option.showOnDistance? option.showOnDistance:5;
+    let scroll = option.showOnDistance ? option.showOnDistance : 5;
     if (amountsDisplaycrolled() >= scroll) {
       document.getElementById('WdGt_rdt_top_Plgin').style.display = 'block';
     }

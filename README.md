@@ -15,8 +15,12 @@ import backToTop from 'reactjs-back-to-top';
 
 # pass arguments
 let option = {
-   text:'Back to top',
-   background:'white'
+    text: 'Back to top',   // default text
+    background: '#f90404', // back ground color
+    fontColor: '#000',     // font color
+    image:'',              // image url
+    showOnDistance:30,     // display after
+    className:''           // custom class
 }
 backToTop.init(option);
 ```

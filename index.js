@@ -1,4 +1,4 @@
-let HTML = `<div class='WdGt-fix-right-bottom-badge'><div class='BTN-BackToTop-Button BTN-BackToTop-One' id='WdGt_rdt_top_Plgin' style='display: none;'><div class='BTN-BackToTop-Inner' id='WdGt_rdt_top_Plgin'><div class='BTN-BackToTop-ImG' id='WdGt_rdt_top_Plgin'> <img id='WdGt_rdt_top_Plgin' src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Top_Arrow.svg/1200px-Top_Arrow.svg.png' alt='top arrow' /></div><div class='BTN-BackToTop-Text' id='WdGt_rdt_top_Plgin'></div></div></div></div>`;
+let HTML = `<div class='WdGt-fix-right-bottom-badge {WSR_CUST_CLS}'><div class='BTN-BackToTop-Button BTN-BackToTop-One' id='WdGt_rdt_top_Plgin' style='display: none; background: {WSR_BG_CLR}; color: {WSR_FNT_CLR};'><div class='BTN-BackToTop-Inner' id='WdGt_rdt_top_Plgin'><div class='BTN-BackToTop-ImG' id='WdGt_rdt_top_Plgin'> <img id='WdGt_rdt_top_Plgin' {WSR_IMG_URL} alt='top arrow' /></div><div class='BTN-BackToTop-Text' id='WdGt_rdt_top_Plgin'>{WSR_TTL_TXT}</div></div></div></div>`;
 //get document height
 function getDocWidgetHeight() { var D = document; return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight) }
 
@@ -8,7 +8,7 @@ function amountsDisplaycrolled() { var winheight = window.innerHeight || (docume
 var style = document.createElement('style');
 style.innerHTML = `
 .BTN-BackToTop-Button {
-  padding: 4px 8px;
+  padding: 5px 5px;
   position: relative;
   display: flex;
   -webkit-box-pack: center;
@@ -38,6 +38,7 @@ style.innerHTML = `
   justify-content: center;
   z-index: 2;
   transition: all 0.3s ease 0s;
+  padding: 0 5px 0 0;
 }
 
 .BTN-BackToTop-ImG img {
@@ -47,7 +48,6 @@ style.innerHTML = `
 .BTN-BackToTop-Text {
   display: flex;
   align-items: center;
-  line-height: 13px;
   max-width: 280px;
   white-space: nowrap;
   overflow: hidden;
@@ -67,15 +67,23 @@ style.innerHTML = `
 }
   `;
 
-exports.init = function (args) {
+exports.init = function (option) {
+  console.log(option, 'option');
   var elem = document.createElement('div');
+  HTML = HTML.replace(/{WSR_TTL_TXT}/gi, option.text ? option.text : '');
+  HTML = HTML.replace(/{WSR_BG_CLR}/gi, option.background ? option.background : '');
+  HTML = HTML.replace(/{WSR_FNT_CLR}/gi, option.fontColor ? option.fontColor : '');
+  HTML = HTML.replace(/{WSR_IMG_URL}/gi, option.image ? option.image : "src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Top_Arrow.svg/1200px-Top_Arrow.svg.png'");
+  HTML = HTML.replace(/{WSR_CUST_CLS}/gi, option.className ? option.className : '');
+
   elem.innerHTML = HTML;
   document.body.appendChild(elem);
-  
+
   document.head.appendChild(style);
 
   window.addEventListener("scroll", function () {
-    if (amountsDisplaycrolled() >= 2) {
+    let scroll = option.showOnDistance? option.showOnDistance:5;
+    if (amountsDisplaycrolled() >= scroll) {
       document.getElementById('WdGt_rdt_top_Plgin').style.display = 'block';
     }
     else {

@@ -81,7 +81,7 @@ exports.init = function (option) {
   document.head.appendChild(style);
 
   window.addEventListener("scroll", function () {
-    let scroll = option.showOnDistance ? option.showOnDistance : 5;
+    let scroll = option.displayAfterScroll ? option.displayAfterScroll : 5;
     if (amountsDisplaycrolled() >= scroll) {
       document.getElementById('WdGt_rdt_top_Plgin').style.display = 'block';
     }

@@ -1,6 +1,6 @@
-# Javascript reactjs-back-to-top
+# reactjs-back-to-top
 
-Javascript reactjs-back-to-top is a simple function for the website.
+Reactjs back-to-top is a simple function for the website.
 
 ## Installation
 
@@ -15,11 +15,11 @@ import backToTop from 'reactjs-back-to-top';
 
 # pass arguments
 let option = {
-    text: 'Back to top',   // default text
-    background: '#f90404', // back ground color
-    fontColor: '#000',     // font color
-    image:'',              // image url
-    showOnDistance:30,     // display after
+    text: 'Back to top',   
+    background: '#f90404', 
+    fontColor: '#000',     
+    image:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Top_Arrow.svg/1200px-Top_Arrow.svg.png',              
+    displayAfterScroll:30, //percentage
     className:''           // custom class
 }
 backToTop.init(option);
